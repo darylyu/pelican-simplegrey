@@ -8,18 +8,17 @@
     {% if loop.index == 1 %}
 
       <article>
-        <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
-        {{ article.content }}
+          <h4>{{ article.locale_date }} <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h4>
       </article>
 
-      <hr />
+      <!hr />
 
       {% if loop.length  > 1 %}
         <div>
           <h3>Last posts</h3>
           <ol class="archive">
       {% endif %}
-    
+
     {% elif loop.index < 7 %}
       <li>
         {% include 'article_link.inc.html' %}
