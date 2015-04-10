@@ -4,32 +4,6 @@
 {% block content %}
 
 {% for article in articles %}
-
-    {% if loop.index == 1 %}
-
-      <article>
-          <h4>{{ article.locale_date }} <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h4>
-      </article>
-
-      <!hr />
-
-      {% if loop.length  > 1 %}
-        <div>
-          <h3>Last posts</h3>
-          <ol class="archive">
-      {% endif %}
-
-    {% elif loop.index < 7 %}
-      <li>
-        {% include 'article_link.inc.html' %}
-      </li>
-    {% endif %}
-
+    <h3>{{ article.locale_date }} <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
 {% endfor %}
-
-{% if articles|length > 1 %}
-          </ol>
-        </div>
-{% endif %}
-
 {% endblock content %}
